@@ -12,8 +12,8 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<files>
 		<file>
-			<source>src/main/resources/config/README.txt</source>
-			<outputDirectory>/</outputDirectory>
+			<source>${basedir}/target/${project.artifactId}-${project.version}.jar</source>
+			<outputDirectory>/lib</outputDirectory>
 		</file>
 	</files>
 	<fileSets>

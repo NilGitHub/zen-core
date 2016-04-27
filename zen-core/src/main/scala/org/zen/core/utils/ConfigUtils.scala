@@ -1,9 +1,10 @@
-package com.iclick.tracking.sync.util
+package org.zen.core.utils
 
 import org.apache.log4j.PropertyConfigurator
 
 object ConfigUtils extends Loggable {
 
+  //-Dconfig=[config dir]
   var conf = System.getProperty("config")
   var prop = Config.getConfigFormPathOrResource(conf)
 

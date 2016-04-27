@@ -1,4 +1,4 @@
-package com.iclick.tracking.sync.util
+package org.zen.core.utils
 
 import org.apache.log4j._
 

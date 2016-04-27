@@ -1,4 +1,4 @@
-package com.iclick.tracking.sync.util
+package org.zen.core.utils
 
 import java.io.{ FileInputStream, IOException, InputStream }
 import java.util.Properties
