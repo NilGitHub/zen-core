@@ -3,6 +3,8 @@ package org.zen.core.utils
 import java.io.{ FileInputStream, IOException, InputStream }
 import java.util.Properties
 import java.io.File
+import org.slf4j.LoggerFactory
+import com.typesafe.scalalogging.Logger
 
 trait RichProperties {
   def getProperty(name: String): String
@@ -38,7 +40,8 @@ trait RichProperties {
   }
 }
 
-object Config extends Loggable {
+object Config/* extends Loggable */{
+  val logger = Logger(LoggerFactory.getLogger(Config.getClass))
   def getConfig(filename: String): Properties with RichProperties = {
     val prop = new Properties with RichProperties
     prop.putAll(getProperties(filename))
@@ -62,12 +65,12 @@ object Config extends Loggable {
       config = new FileInputStream(new File(path))
     }catch{
       case e:Exception =>
-        warn("load properties file "+path+" error!")
+        logger.warn("load properties file "+path+" error!")
         config = getClass.getResourceAsStream(path)
     }
     pro.load(config)
     config.close()
-    info("load config finish! "+pro)
+    logger.info("load config finish! "+pro)
     new Properties(pro) with RichProperties
   }
   private def getProperties(filename: String): Properties = {
@@ -79,7 +82,7 @@ object Config extends Loggable {
       return prop
     } catch {
       case e: Exception =>
-        warn("Error while loading file: " + filename, e)
+        logger.warn("Error while loading file: " + filename, e)
         return prop
     } finally {
       try {

@@ -1,8 +1,8 @@
 package org.zen.core.utils
 
-import org.apache.log4j._
 
 import scala.collection.mutable.HashMap
+import org.apache.log4j.Logger
 
 /** Wraps log4j in a trait that not only makes it easy to log things
   * but also uses lazy evaluation for log messages -- no need to

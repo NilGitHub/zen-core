@@ -1,0 +1,1 @@
+java -cp ../lib/log4j-1.2.17.jar:../lib/slf4j-api-1.7.19.jar:../lib/slf4j-nop-1.7.19.jar:../lib/scala-library-2.11.7.jar:../lib/scala-logging-slf4j_2.11-2.1.1.jar:../lib/scala-reflect-2.11.0.jar:../lib/scala-logging-api_2.11-2.1.1.jar:../lib/zen-core-0.1.jar -Dlog4j=../config/log4j.properties org.zen.core.Zen

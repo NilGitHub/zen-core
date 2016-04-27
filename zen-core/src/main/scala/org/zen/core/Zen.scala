@@ -1,14 +1,16 @@
 package org.zen.core
 
-import org.zen.core.utils.ConfigUtils
+import org.slf4j.LoggerFactory
+import com.typesafe.scalalogging.Logger
 
-
-object Zen extends App{
-  
+object Zen extends App {
+  val logger = Logger(LoggerFactory.getLogger(Zen.getClass))
+  logger.info("This is Scala-logger info...")
+  logger.debug("This is Scala-logger debug...")
+  logger.error("This is Scala-logger error...")
   //1,读取配置
-  val test1 = ConfigUtils.prop.getString("test.1")
-  println(test1)
+
   //2,读取插件配置
-  
+
   //3,加载扩展点,在扩展点的每步中加载插件
 }
